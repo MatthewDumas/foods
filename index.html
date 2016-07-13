@@ -4,33 +4,73 @@
 		<title>ONDA</title>
 		<link rel="icon" href=/Users/matthewdumas/Sites/foods/o.png />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<!--<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>-->
+		<script type="text/javascript">
+			function validateEmail(email) {
+				var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return re.test(email);
+			}
+			function postContactToGoogle(){
+				var name = $('#name').val();
+				var email = $('#email').val();
+				var feed = $('#feed').val();
+				if ((name !== "") && (email !== "") && ((feed !== "") && (validateEmail(email)))) {
+					$.ajax({
+						url: "https://docs.google.com/a/www.ondafood.com/forms/d/1URTHEcgl68-MQUoqwX584soqC85o-wZEuWP6dE5kieg/formResponse",
+						data: {"entry.1" : name, "entry.3" : email, "entry.4": feed},
+						type: "POST",
+						dataType: "xml",
+						statusCode: {
+							0: function (){
+
+								$('#name').val("");
+								$('#email').val("");
+								$('#feed').val("");
+								//Success message
+							},
+							200: function (){
+								$('#name').val("");
+								$('#email').val("");
+								$('#feed').val("");
+								//Success Message
+							}
+						}
+					});
+				}
+				else {
+					//Error message
+				}
+			}
+	</script>
 	</head>
 	<body class="landing">
-		
+
 		<header>
+
 			<h1>ONDA</h1>
+
+			<h4 id="sub-head"> coming soon </p>
+
 		</header>
 
 		<section>
-			<form method="post" action="#" class="container 50%">
+
+			<form method="post" action="javascript:postContactToGoogle()" class="container 50%">
 				<div class="row uniform 50%">
 					<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="join our mailing list" /></div>
 					<div class="4u$ 12u$(xsmall)"><input type="submit" value="sign up" class="fit special" /></div>
 				</div>
 			</form>
 
-
-			<p> coming soon </p>
 		</section>
 
-	
+
 
 		<footer>
 			<ul class="icons">
@@ -40,6 +80,6 @@
 				<li><a href="mailto:info@ondafood.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 			</ul>
 		</footer>
-		
+
 	</body>
 </html>
