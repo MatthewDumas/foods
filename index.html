@@ -20,22 +20,19 @@
 			<script type="text/javascript">
 				var submitted = false;
 
-
-
 				function thanks() {
 					var button = $('[type=submit]');
 					submitted = true;
+					$('[type=email]').val('');
 					button.val('thank you!');
 					button.attr('disabled', true);
 
 
 					setTimeout(function() {
 						submitted = false;
-						button.css('transition', '1s');
 						button.val('sign up');
 						button.attr('disabled', false);
-						button.css('transition', '0');
-					}, 10000);
+					}, 5000);
 				}
 
 				function prevent() {
@@ -44,8 +41,6 @@
 						$('iframe').attr('src', '');
 					}
 				}
-
-
 			</script>
 
 			<iframe name="hidden_iframe" onload="prevent()" style="display: none;"></iframe>
