@@ -31,7 +31,7 @@
 
 	@font-face {
 		font-family: 'ONDA';
-		src: url('/Users/matthewdumas/Sites/foods/assets/fonts/Pistara.otf'); /*URL to font*/
+		src: url('/assets/fonts/Pistara.otf'); /*URL to font*/
 	}
 
 	body {
@@ -61,7 +61,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		background: url(../../images/Candy.jpg) no-repeat center center fixed;
+		background: url(/images/Candy.jpg) no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
