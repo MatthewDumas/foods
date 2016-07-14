@@ -3,7 +3,6 @@
 	<head>
 		<title>ONDA</title>
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="assets/js/jquery.min.js"></script>
 	</head>
 	<body class="landing">
 
@@ -21,24 +20,23 @@
 				var submitted = false;
 
 				function thanks() {
-					var button = $('[type=submit]');
+					var button = document.querySelector('[type=submit]');
 					submitted = true;
-					$('[type=email]').val('');
-					button.val('thank you!');
-					button.attr('disabled', true);
-
+					document.querySelector('[type=email]').value = '';
+					button.value = 'thank you!';
+					button.disabled = true;
 
 					setTimeout(function() {
 						submitted = false;
-						button.val('sign up');
-						button.attr('disabled', false);
+						button.value = 'sign up';
+						button.disabled = false;
 					}, 5000);
 				}
 
 				function prevent() {
 					if(submitted) {
 						submitted = false;
-						$('iframe').attr('src', '');
+						document.querySelector('iframe').src = '';
 					}
 				}
 			</script>
@@ -47,7 +45,7 @@
 
 			<form method="post" target="hidden_iframe" onsubmit="thanks()" action="https://docs.google.com/forms/d/e/1FAIpQLSc1403JRYQuTDt92ZVeBK7LJp_eiHPc0q4OrHNzdfSgcen4Dg/formResponse" class="container 50%">
 				<div id="form" class="row uniform 50%">
-					<div class="8u 12u$(xsmall)"><input type="email" name="entry.1493226444" id="email" placeholder="join our mailing list" /></div>
+					<div class="8u 12u$(xsmall)"><input type="email" name="entry.1493226444" id="email" placeholder="join our mailing list" required /></div>
 					<div class="4u$ 12u$(xsmall)"><input type="submit" value="sign up" class="fit special" /></div>
 				</div>
 			</form>
