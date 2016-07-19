@@ -40,7 +40,6 @@
 
 	header {
 		position: fixed;
-		/*width: 100%;*/
 		font-size: 0;
 		z-index: 1;
 		padding: 50px 30px;
@@ -61,7 +60,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		background: url(/images/Candy.jpg) no-repeat center center fixed;
+		background: url(/images/Candies.jpg) no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
