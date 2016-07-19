@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>ONDA</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="landing">
@@ -22,12 +23,12 @@
 				function thanks() {
 					var button = document.querySelector('[type=submit]');
 					submitted = true;
-					document.querySelector('[type=email]').value = '';
 					button.value = 'thank you!';
 					button.disabled = true;
 
 					setTimeout(function() {
 						submitted = false;
+						document.querySelector('[type=email]').value = '';
 						button.value = 'sign up';
 						button.disabled = false;
 					}, 5000);
@@ -53,12 +54,10 @@
 		</section>
 
 		<footer>
-			<ul class="icons">
-				<li><a href="https://twitter.com/ondafood?lang=en" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="https://www.facebook.com/ondafood/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="https://www.instagram.com/ondafood/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="mailto:info@ondafood.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
+			<a href="https://twitter.com/ondafood?lang=en" class="icon alt fa-twitter"><span class="label">Twitter</span></a>
+			<a href="https://www.facebook.com/ondafood/" class="icon alt fa-facebook"><span class="label">Facebook</span></a>
+			<a href="https://www.instagram.com/ondafood/" class="icon alt fa-instagram"><span class="label">Instagram</span></a>
+			<a href="mailto:info@ondafood.com" class="icon alt fa-envelope"><span class="label">Email</span></a>
 		</footer>
 
 	</body>

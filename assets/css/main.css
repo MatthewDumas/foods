@@ -74,6 +74,7 @@
 	form input[type]:disabled {
 		background: white !important;
 		color: black !important;
+		font-size: 21px;
 	}
 
 	form input[type=email]::-webkit-input-placeholder {
@@ -109,6 +110,11 @@
 		padding: 25px;
 	}
 
+	footer a {
+		padding: 10px;
+		font-size: 24px;
+	}
+
 	@media (max-width: 736px) {
 		header {
 			transform: scale(0.6, 0.6);
@@ -125,12 +131,24 @@
 			padding: 0 20px;
 			left: 0px;
 		}
+
 	}
 
 	@media (max-width: 480px) {
+
 		header {
 			transform: scale(0.3, 0.3);
 		}
+
+		footer {
+			display: table;
+		}
+
+		footer a {
+			display: table-cell;
+			width: 25%;
+		}
+
 	}
 
 	ol, ul {
